@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
+import TextField from "./TextField"
 
 class App extends Component{
   constructor(props){
@@ -25,6 +26,7 @@ class App extends Component{
     return(
       <div>
         <h1 className="center">To-Do List</h1>
+        <TextField />
       </div>
     )
   }
