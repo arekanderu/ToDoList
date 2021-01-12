@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from "react";
-import TextField from "./TextField"
+import TextField from "./TextField";
+import ToDoList from "./ToDoList";
 
 class App extends Component{
   constructor(props){
