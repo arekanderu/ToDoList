@@ -1,6 +1,6 @@
-import './App.css';
 import React, { Component } from "react";
-import TextField from "./TextField";
+import AddIcon from "@material-ui/icons/Add";
+import TextBox from "./TextBox";
 
 class App extends Component{
   constructor(props){
@@ -16,17 +16,12 @@ class App extends Component{
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleKeyPress = (e) =>{
-    if(e.keyCode === 13){
-      //
-    }
-  };
-
   render(){
     return(
       <div>
         <h1 className="center">To-Do List</h1>
-        <TextField />
+        <AddIcon />
+        <TextBox onChange={this.handleOnChange.bind(this)} textValue={this.state.textInput}/>
       </div>
     )
   }
