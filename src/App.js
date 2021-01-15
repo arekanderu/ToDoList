@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import TextBox from "./TextBox";
+import List from "./List";
 
 class App extends Component{
   constructor(props){
@@ -30,6 +31,7 @@ class App extends Component{
         <TextBox onChange={this.handleOnChange.bind(this)}
                   textValue={textInput}
                   action={this.emptyTextInput}/>
+        <List />
       </div>
     )
   }
