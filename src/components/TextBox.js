@@ -1,9 +1,7 @@
 import React from "react";
 import { TextField } from "@material-ui/core";
 import { connect } from "react-redux";
-import { addTodo } from "./actions";
-
-
+import { addTodo } from "../actions/index";
 
 const TextBox = (props) => {
   const handleOnKeyDown = (event) => {

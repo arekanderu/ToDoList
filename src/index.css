@@ -16,17 +16,36 @@ code {
   text-align: center;
 }
 
-.MuiSvgIcon-root {
+.addIcon{
   position: absolute;
   right: 1%;
-  stroke: #bdbdbd;
-  stroke-width: 1;
 }
 
-.icon{
+.todos{
+  position: relative;
+}
+
+.icons{
+  position: absolute;
+  right: 1%;
+}
+
+.delete{
+  margin-left: 30px;
+  margin-top: -26px;
+}
+
+.edit{
+  margin-top: -40px;
+
+}
+
+
+
+/* .icon{
   display: none;
 }
 
 .content:hover + .icon{
   display: block;
-}
+} */

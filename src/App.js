@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AddIcon from "@material-ui/icons/Add";
-import TextBox from "./TextBox";
-import List from "./List";
+import TextBox from "./components/TextBox";
+import List from "./components/List";
 
 class App extends Component{
   constructor(props){
@@ -20,14 +20,12 @@ class App extends Component{
     this.setState({ textInput: "" })
   }
 
-
-
   render(){
     const { textInput } = this.state;
     return(
       <div>
         <h1 className="center">To-Do List</h1>
-        <AddIcon />
+        <span className="addIcon"><AddIcon /></span>
         <TextBox onChange={this.handleOnChange.bind(this)}
                   textValue={textInput}
                   action={this.emptyTextInput}/>

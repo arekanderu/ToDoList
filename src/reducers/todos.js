@@ -16,7 +16,10 @@ const todo = (state = initialState, action) =>{
         ],
       };
     case "DELETE_TODO":
-      return {};
+      return {
+        ...state,
+        data: state.data.filter((todo) => todo.id !== action.id)
+      };
     default:
       return state;
   }
