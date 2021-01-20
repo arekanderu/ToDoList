@@ -4,21 +4,11 @@ import Delete from './Delete';
 import Edit from './Edit';
 
 const List = (props) => {
-  const handleOnClick = (id) =>{
-    props.action();
-  }
-
-
   return(
     <ul>
         {props.todo.length !== 0 ? props.todo.map((todo, key) => (
           <li key={key}>
-            <Edit text={todo.message}
-                       onClick={() => handleOnClick(todo.id)}
-                       id={todo.id}
-                       onChanage={props.onChange}
-                       />
-
+            <Edit text={todo.message} id={todo.id}/>
             <div className="icons">
               <Delete id={todo.id} />
             </div>

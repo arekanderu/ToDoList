@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import { connect } from "react-redux";
-import { editTodo } from "../actions/index";
+import { editTodo, addTodo } from "../actions/index";
 
 const Edit = (props) =>{
-  const [editable] = useState('colide');
+  const [value, setValue] = useState(props.text);
   return(
     <div>
       <TextField
         name="textInput"
-        type="text"
+        id={props.id}
         autoComplete="off"
-        value={props.text}
-        onChange={(event) =>  props.dispatch(editTodo(props.id, event.target.value))}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         InputProps={{ disableUnderline:true }}
-        onChange={(event) => {
-
-
+        onKeyDown={(e) => {
+          if(e.key === 'Enter'){
+          props.dispatch(editTodo(props.id, e.target.value))
+          }
         }}
             />
-        {editable}
     </div>
   )
 }
