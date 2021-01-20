@@ -17,3 +17,12 @@ export const deleteTodo = (id) => {
   };
 };
 
+const EDIT_TODO = "EDIT_TODO";
+export const editTodo = (id, text) =>{
+  return{
+    type: EDIT_TODO,
+    id,
+    content: text
+  }
+}
+

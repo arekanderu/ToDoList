@@ -1,15 +1,15 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
+import { connect } from "react-redux";
+import { deleteTodo } from "../actions/index";
+
 
 const Delete = (props) => {
-  const handleOnClick = (event) =>{
-    alert('hi');
-  }
   return(
     <div className="delete">
-       <CloseIcon onClick={handleOnClick}/>
+       <CloseIcon onClick={() => props.dispatch(deleteTodo(props.id))}/>
     </div>
   )
 }
 
-export default Delete;
+export default connect()(Delete);

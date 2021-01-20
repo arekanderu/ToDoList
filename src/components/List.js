@@ -4,15 +4,24 @@ import Delete from './Delete';
 import Edit from './Edit';
 
 const List = (props) => {
+  const handleOnClick = (id) =>{
+    props.action();
+  }
+
+
   return(
     <ul>
         {props.todo.length !== 0 ? props.todo.map((todo, key) => (
           <li key={key}>
-            <p>{todo.message}</p>
-              <div className="icons">
-                <Edit />
-                <Delete />
-              </div>
+            <Edit text={todo.message}
+                       onClick={() => handleOnClick(todo.id)}
+                       id={todo.id}
+                       onChanage={props.onChange}
+                       />
+
+            <div className="icons">
+              <Delete id={todo.id} />
+            </div>
           </li>
         )): 'No item on the list' }
     </ul>

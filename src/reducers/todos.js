@@ -20,6 +20,16 @@ const todo = (state = initialState, action) =>{
         ...state,
         data: state.data.filter((todo) => todo.id !== action.id)
       };
+
+    case "EDIT_TODO":
+      const id = action.id
+      return{
+        ...state,
+        [id]: {
+          ...state[id],
+          message: action.content,
+        }
+      }
     default:
       return state;
   }
