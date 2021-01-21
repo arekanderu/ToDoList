@@ -8,7 +8,7 @@ const Add = (props) => {
   return(
     <div>
       <TextField
-        name="textInput"
+        name="text-input"
         type="text"
         placeholder="List item..."
         fullWidth

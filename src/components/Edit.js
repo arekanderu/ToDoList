@@ -8,10 +8,11 @@ const Edit = (props) =>{
   return(
     <div>
       <TextField
-        className="textInput"
+        className="text-input"
         id={props.id}
         autoComplete="off"
         autoFocus
+        style={{ padding: '15px'}}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
