@@ -10,8 +10,8 @@ const todo = (state = initialState, action) =>{
         data: [
           ...state.data,
           {
-            message: action.content,
             id: action.id,
+            message: action.content,
           },
         ],
       };
@@ -22,14 +22,22 @@ const todo = (state = initialState, action) =>{
       };
 
     case "EDIT_TODO":
-      const id = action.id
-      return{
+      const id = action.id;
+      const message = action.content
+      const todoid = state.id
+      return {
         ...state,
-        [id]: {
-          ...state[id],
-          message: action.content,
-        }
-      }
+        data: state.data.map(todo => todo.id === action.id ?
+          {
+           ...todo,
+           message: action.content
+          } : todo )
+
+        // [id]: {
+        //   ...state[id],
+        //   message: action.content,
+        // }
+      };
     default:
       return state;
   }
