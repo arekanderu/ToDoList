@@ -12,6 +12,7 @@ const todo = (state = initialState, action) =>{
           {
             id: action.id,
             message: action.content,
+            completed: false
           },
         ],
       };
@@ -27,7 +28,8 @@ const todo = (state = initialState, action) =>{
         data: state.data.map(todo => todo.id === action.id ?
           {
            ...todo,
-           message: action.content
+           message: action.content,
+           completed: action.isCompleted
           } : todo )
       };
     default:

@@ -10,8 +10,8 @@ const List = (props) => {
   return(
     <ul>
       {props.todo.length !== 0 ? props.todo.map((todo, key) => (
-        <li key={key}>
-          <Checkbox color="default"/>
+        <li className="todo-row" key={key}>
+          <Checkbox style ={{ color: "#fff" }}/>
           <div className="content">
             {clicked && todo.id === id ?
               <Edit text={todo.message}

@@ -5,7 +5,8 @@ export const addTodo = (text) => {
   return{
     type: ADD_TODO,
     id: counter++,
-    content: text
+    content: text,
+    completed: false
   };
 };
 
@@ -18,11 +19,12 @@ export const deleteTodo = (id) => {
 };
 
 const EDIT_TODO = "EDIT_TODO";
-export const editTodo = (id, text) =>{
+export const editTodo = (id, text, isCompleted) =>{
   return{
     type: EDIT_TODO,
     id,
-    content: text
+    content: text,
+    completed: isCompleted
   }
 }
 

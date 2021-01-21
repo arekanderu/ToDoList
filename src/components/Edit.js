@@ -8,7 +8,7 @@ const Edit = (props) =>{
   return(
     <div>
       <TextField
-        name="textInput"
+        className="textInput"
         id={props.id}
         autoComplete="off"
         autoFocus
@@ -20,7 +20,7 @@ const Edit = (props) =>{
             props.handleOnKeyDown()
           }
         }}
-            />
+      />
     </div>
   )
 }
