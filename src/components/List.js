@@ -12,10 +12,13 @@ const List = (props) => {
       {props.todo.length !== 0 ? props.todo.map((todo, key) => (
         <li key={key}>
           <Checkbox color="default"/>
+          <div className="content">
             {clicked && todo.id === id ?
-
-              <Edit text={todo.message} id={todo.id} handleOnKeyDown={() => setClicked(!clicked)}/>
-            :
+              <Edit text={todo.message}
+                    id={todo.id}
+                    handleOnKeyDown={() => setClicked(!clicked)}
+              />
+              :
               <p onClick={() => {
                 setClicked(!clicked)
                 setId(todo.id)
@@ -25,6 +28,7 @@ const List = (props) => {
             <div className="icons">
               <Delete id={todo.id} />
             </div>
+          </div>
           </li>
         )): 'No item on the list' }
     </ul>

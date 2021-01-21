@@ -32,17 +32,26 @@ code {
 
 .delete{
   margin-left: 30px;
-  margin-top: -26px;
+  margin-top: -50px;
 }
 
 ul li{
   list-style: none;
 }
 
-/* .icon{
+li{
+  padding: 10px;
+}
+
+.content{
+  margin-left: 50px;
+  margin-top: -45px;
+}
+
+.icons{
   display: none;
 }
 
-.content:hover + .icon{
+p:hover + .icons{
   display: block;
-} */
+}
