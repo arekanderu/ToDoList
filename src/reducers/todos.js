@@ -22,9 +22,6 @@ const todo = (state = initialState, action) =>{
       };
 
     case "EDIT_TODO":
-      const id = action.id;
-      const message = action.content
-      const todoid = state.id
       return {
         ...state,
         data: state.data.map(todo => todo.id === action.id ?
@@ -32,11 +29,6 @@ const todo = (state = initialState, action) =>{
            ...todo,
            message: action.content
           } : todo )
-
-        // [id]: {
-        //   ...state[id],
-        //   message: action.content,
-        // }
       };
     default:
       return state;

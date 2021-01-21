@@ -7,9 +7,9 @@ export default function App(){
     return(
       <div>
         <h1 className="center">To-Do List</h1>
-          <span className="addIcon"><AddIcon /></span>
-        <Add />
         <List/>
+        <span className="addIcon"><AddIcon /></span>
+        <Add />
       </div>
     );
   }

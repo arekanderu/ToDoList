@@ -35,12 +35,9 @@ code {
   margin-top: -26px;
 }
 
-.edit{
-  margin-top: -40px;
-
+ul li{
+  list-style: none;
 }
-
-
 
 /* .icon{
   display: none;
