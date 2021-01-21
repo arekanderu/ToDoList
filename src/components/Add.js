@@ -13,6 +13,7 @@ const Add = (props) => {
         placeholder="List item..."
         fullWidth
         autoComplete="off"
+        autoFocus
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
