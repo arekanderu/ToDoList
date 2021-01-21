@@ -6,8 +6,16 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
   input: {
-    color: 'white'
+    color: 'white',
   },
+  underline:{
+    "&&&:before": {
+      borderBottomColor: "none"
+    },
+    "&&:after": {
+      borderBottomColor: "white"
+    }
+  }
 };
 
 const Edit = (props) =>{
@@ -20,8 +28,11 @@ const Edit = (props) =>{
         id={props.id}
         autoComplete="off"
         autoFocus
-        style={{ padding: '15px', color: 'white' }}
-        inputProps={{  className: classes.input }}
+        style={{ padding: '20px', color: 'white' }}
+        InputProps={{  classes: {
+          root: classes.input,
+          underline: classes.underline
+        } }}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
