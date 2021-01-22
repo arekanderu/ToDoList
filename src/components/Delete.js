@@ -7,7 +7,9 @@ import { deleteTodo } from "../actions/index";
 const Delete = (props) => {
   return(
     <div className="delete">
-       <CloseIcon onClick={() => props.dispatch(deleteTodo(props.id))}/>
+       <CloseIcon
+          onClick={() => props.dispatch(deleteTodo(props.id))}
+        />
     </div>
   )
 }

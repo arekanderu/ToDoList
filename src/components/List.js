@@ -6,12 +6,19 @@ import Checkbox from '@material-ui/core/Checkbox'
 
 const List = (props) => {
   const [clicked, setClicked] = useState(false);
-  const [id, setId] = useState('')
+  const [id, setId] = useState('');
+  const [checked, setChecked] = useState(true);
   return(
     <ul>
       {props.todo.length !== 0 ? props.todo.map((todo, key) => (
         <li className="todo-row" key={key}>
-          <Checkbox style ={{ color: "#fff" }}/>
+          <Checkbox
+            checked={checked}
+            onClick={() => setChecked(!checked)}
+            style ={{ color: "#fff",
+                      marginTop: "20px",
+             }}/>
+
           <div className="content">
             {clicked && todo.id === id ?
               <Edit text={todo.message}
