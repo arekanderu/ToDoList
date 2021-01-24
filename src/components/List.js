@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import Delete from './Delete';
 import Edit from './Edit';
-import Checkbox from '@material-ui/core/Checkbox'
+import Checkbox from './ToggleCheckbox';
 
 const List = (props) => {
   const [clicked, setClicked] = useState(false);
   const [id, setId] = useState('');
-  const [checked, setChecked] = useState(true);
   return(
     <ul>
       {props.todo.length !== 0 ? props.todo.map((todo, key) => (
-        <li className="todo-row" key={key}>
-          <Checkbox
-            checked={checked}
-            onClick={() => setChecked(!checked)}
-            style ={{ color: "#fff",
-                      marginTop: "20px",
-             }}/>
-
+        <li key={key} className="todo-row">
+          <Checkbox id={todo.id}
+                    isCompleted={todo.completed} />
           <div className="content">
             {clicked && todo.id === id ?
               <Edit text={todo.message}

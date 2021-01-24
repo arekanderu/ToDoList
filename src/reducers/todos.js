@@ -29,9 +29,18 @@ const todo = (state = initialState, action) =>{
           {
            ...todo,
            message: action.content,
-           completed: action.isCompleted
           } : todo )
       };
+
+      case "COMPLETE_TODO":
+        return{
+          ...state,
+          data: state.data.map(todo => todo.id === action.id ?
+            {
+              ...todo,
+              completed: action.completed
+            } : todo )
+        }
     default:
       return state;
   }
