@@ -10,28 +10,33 @@ const List = (props) => {
   return(
     <ul>
       {props.todo.length !== 0 ? props.todo.map((todo, key) => (
+        todo.completed === false ?
         <li key={key} className="todo-row">
-          <Checkbox id={todo.id}
-                    isCompleted={todo.completed} />
+          {/* Click checkbox to complete to-do function */}
+          <Checkbox id={todo.id} isCompleted={todo.completed} />
           <div className="content">
-            {clicked && todo.id === id ?
-              <Edit text={todo.message}
-                    id={todo.id}
-                    handleOnKeyDown={() => setClicked(!clicked)}
-              />
-              :
-              <p onClick={() => {
-                setClicked(!clicked)
-                setId(todo.id)
-              }}>
-                {todo.message}
-              </p>}
+          {/* Click to-do to edit function */}
+          {clicked && todo.id === id ?
+            <Edit text={todo.message}
+                  id={todo.id}
+                  handleOnKeyDown={() => setClicked(!clicked)}
+            />
+          :
+            <p onClick={() => {
+              setClicked(!clicked)
+              setId(todo.id)
+            }}>
+              {todo.message}
+            </p>
+          }
+            {/* Delete function */}
             <div className="icons">
               <Delete id={todo.id} />
             </div>
           </div>
-          </li>
-        )): 'No item on the list' }
+        </li> : ''
+      )) : ''
+      }
     </ul>
   )
 }

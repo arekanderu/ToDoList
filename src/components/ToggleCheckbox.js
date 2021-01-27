@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { completeTodo } from "../actions/index";
 import Checkbox from '@material-ui/core/Checkbox';
 
-
 const ToggleCheckbox = (props) =>{
   const [checked, setChecked] = useState(true);
   return(

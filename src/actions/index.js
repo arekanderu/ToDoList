@@ -35,4 +35,3 @@ export const completeTodo = (id, isCompleted) =>{
     completed: isCompleted
   }
 }
-
