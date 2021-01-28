@@ -8,15 +8,15 @@ const ToggleCheckbox = (props) =>{
   return(
     <div>
       <Checkbox
-            id={props.id}
-            checked={props.isCompleted}
-            onClick={() => {
-              setChecked(!checked)
-              props.dispatch(completeTodo(props.id, checked))
-            }}
-            style ={{ color: "#fff",
-                      marginTop: "20px",
-             }}/>
+        checked={props.isCompleted}
+        onClick={() => {
+          setChecked(!checked)
+          props.dispatch(completeTodo(props.id, checked))
+        }}
+          style={{ color: "#fff",
+                    marginTop: "20px",
+                }}
+      />
     </div>
   )
 }

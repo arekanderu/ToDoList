@@ -6,7 +6,7 @@ import { Collapse } from "@material-ui/core";
 
 const CompletedList = (props) =>{
   const counter = props.todo.filter((item) => item.completed);
-  const [clicked, setClicked] = useState(true);
+  const [clicked, setClicked] = useState(false);
   return(
     <div>
       <div className="down-icon"><ToggleCollapse condition={() => setClicked(!clicked)} action={clicked}/></div>
